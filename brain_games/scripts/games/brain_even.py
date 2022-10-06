@@ -1,25 +1,35 @@
+from argparse import ArgumentDefaultsHelpFormatter
 import prompt
 import random
 
 
-def is_even(number):
-    answer = prompt.string("Your answer: ")
-    if number % 2 == 0 and answer != "yes":
-        print(f"'{answer}' is wrong answer ;(. Correct answer was 'yes'.")
-        return False
-    elif number % 2 != 0 and answer != "no":
-        print(f"'{answer}' is wrong answer ;(. Correct answer was 'no'.")
-        return False
-    else:
+def greet_user():
+    print("Welcome to the Brain Games!")
+    name = prompt.string("May I have your name? ")
+    print(f"Hello, {name}!")
+    return name
+
+
+def analyze_answer(user_answer, correct_asnwer):
+    if user_answer == correct_asnwer:
         print("Correct!")
         return True
+    else:
+        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_asnwer}'.")
+        return False
+
+
+def is_even(number):
+    answer = prompt.string("Your answer: ")
+    if number % 2 == 0:
+        return  analyze_answer(answer, "yes")
+    else:
+        return  analyze_answer(answer, "no")
 
 
 def main():
     correct_answers = 0
-    print("Welcome to the Brain Games!")
-    name = prompt.string("May I have your name? ")
-    print(f"Hello, {name}!")
+    name = greet_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')
     while correct_answers < 3:
         number = random.randint(1, 100)
