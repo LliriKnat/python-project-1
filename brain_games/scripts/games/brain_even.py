@@ -1,4 +1,3 @@
-from argparse import ArgumentDefaultsHelpFormatter
 import prompt
 import random
 
@@ -15,16 +14,17 @@ def analyze_answer(user_answer, correct_asnwer):
         print("Correct!")
         return True
     else:
-        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_asnwer}'.")
+        print(f"'{user_answer}' is wrong answer ;(. \
+            Correct answer was '{correct_asnwer}'.")
         return False
 
 
 def is_even(number):
     answer = prompt.string("Your answer: ")
     if number % 2 == 0:
-        return  analyze_answer(answer, "yes")
+        return analyze_answer(answer, "yes")
     else:
-        return  analyze_answer(answer, "no")
+        return analyze_answer(answer, "no")
 
 
 def main():

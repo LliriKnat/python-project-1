@@ -4,11 +4,14 @@ import prompt
 
 
 def play_calc():
-    first_number = random.randint(1,99)
-    second_number = random.randint(1,99)
+    operands = ["+", "-", "*"]  # can create a dict 0,1,2 with lambda functions
+    first_number = random.randint(1, 10)
+    second_number = random.randint(1, 10)
+    operand = operands[random.randint(0, 2)]
     print(f"Question: {first_number}+{second_number}")
     answer = prompt.integer("Your answer: ")
-    return brain_even.analyze_answer(answer, first_number+second_number)
+    return brain_even.analyze_answer(answer, first_number + second_number)
+
 
 def main():
     name = brain_even.greet_user()
