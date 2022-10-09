@@ -16,7 +16,6 @@ def generate_progression():
 
 
 def play_progression():
-    print('Test')
     progression = generate_progression()
     print(f"Question: {' '.join(map(str, progression[0]))}")
     user_answer = prompt.integer("Your answer: ")
