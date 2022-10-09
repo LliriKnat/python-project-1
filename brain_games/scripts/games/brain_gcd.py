@@ -14,7 +14,8 @@ def is_gcd(tuple_of_numbers):
 
 
 def play_gcd():  # Greatest common divisor
-    numbers = (random.randint(1, 50), random.randint(1, 50))  # Using tuples this time
+    numbers = \
+        (random.randint(1, 50), random.randint(1, 50))  # Using tuples this time
     print(f"Question: {numbers[0]} {numbers[1]}")
     answer = prompt.integer("Your answer: ")
     return brain_even.analyze_answer(answer, is_gcd(numbers))

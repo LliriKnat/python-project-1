@@ -1,20 +1,19 @@
-from brain_games.scripts.games import brain_even
+from brain_games.scripts.games import brain_even as ev
 import random
 import prompt
 
 
 def play_calc():
     operands = ["+", "-", "*"]  # can create a dict with lambda functions
-    first_number = random.randint(1, 10)
-    second_number = random.randint(1, 10)
+    nums = (random.randint(1, 10), random.randint(1, 10))
     operand = operands[random.randint(0, 2)]
-    print(f"Question: {first_number} {operand} {second_number}")
+    print(f"Question: {nums[0]} {operand} {nums[1]}")
     answer = prompt.integer("Your answer: ")
-    return brain_even.analyze_answer(answer, eval(f"{first_number} {operand} {second_number}"))  # eval is discouraged for security risks
+    return ev.analyze_answer(answer, eval(f"{nums[0]} {operand} {nums[1]}"))
 
 
 def main():
-    name = brain_even.greet_user()
+    name = ev.greet_user()
     print("What is the result of the expression?")
     correct_answers = 0
     while correct_answers < 3:

@@ -14,8 +14,9 @@ def analyze_answer(user_answer, correct_asnwer):
         print("Correct!")
         return True
     else:
-        print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_asnwer}'.")
-        return False
+        print(f"'{user_answer}'\
+is wrong answer ;(. Correct answer was '{correct_asnwer}'.")
+        return False  # This fixes linter error, but looks ugly
 
 
 def is_even(number):
