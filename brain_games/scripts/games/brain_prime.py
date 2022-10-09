@@ -29,7 +29,7 @@ def main():
         if play_prime():
             correct_answers += 1
         else:
-            print(f"Lets try again, {name}!")
+            print(f"Let's try again, {name}!")
             break
     if correct_answers == 3:
         print(f"Congratulations, {name}!")
