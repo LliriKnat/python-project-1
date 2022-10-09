@@ -23,7 +23,7 @@ def play_prime():
 
 def main():
     name = brain_even.greet_user()
-    print('Answer "yes" if the number is prime, otherwise answer "no".')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     correct_answers = 0
     while correct_answers < 3:
         if play_prime():
