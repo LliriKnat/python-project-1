@@ -12,7 +12,6 @@ def is_prime(number):
         elif number % i == 0 and number == i:
             return 'yes'
     return 'no'
-            
 
 
 def play_prime():
