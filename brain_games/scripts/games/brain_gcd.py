@@ -1,5 +1,3 @@
-
-
 from brain_games.scripts.games import brain_even
 import prompt
 import random
@@ -16,7 +14,6 @@ def is_gcd(tuple_of_numbers):
 
 
 def play_gcd():  # Greatest common divisor
-    print('Test')
     numbers = (random.randint(1, 50), random.randint(1, 50))  # Using tuples this time
     print(f"Question: {numbers[0]} {numbers[1]}")
     answer = prompt.integer("Your answer: ")
